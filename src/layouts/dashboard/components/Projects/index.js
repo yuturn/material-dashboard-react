@@ -17,7 +17,7 @@ import { useState } from "react";
 
 // @mui material components
 import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
@@ -26,16 +26,16 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React examples
-import DataTable from "examples/Tables/DataTable";
+// import DataTable from "examples/Tables/DataTable";
 
 // Data
-import data from "layouts/dashboard/components/Projects/data";
+// import data from "layouts/dashboard/components/Projects/data";
 
 function Projects() {
-  const { columns, rows } = data();
+  // const { columns, rows } = data();
   const [menu, setMenu] = useState(null);
 
-  const openMenu = ({ currentTarget }) => setMenu(currentTarget);
+  // const openMenu = ({ currentTarget }) => setMenu(currentTarget);
   const closeMenu = () => setMenu(null);
 
   const renderMenu = (
@@ -66,7 +66,7 @@ function Projects() {
           <MDTypography variant="h6" gutterBottom>
             Projects
           </MDTypography>
-          <MDBox display="flex" alignItems="center" lineHeight={0}>
+          {/* <MDBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
               sx={{
                 fontWeight: "bold",
@@ -79,16 +79,16 @@ function Projects() {
             <MDTypography variant="button" fontWeight="regular" color="text">
               &nbsp;<strong>30 done</strong> this month
             </MDTypography>
-          </MDBox>
+          </MDBox> */}
         </MDBox>
-        <MDBox color="text" px={2}>
+        {/* <MDBox color="text" px={2}>
           <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small" onClick={openMenu}>
             more_vert
           </Icon>
-        </MDBox>
+        </MDBox> */}
         {renderMenu}
       </MDBox>
-      <MDBox>
+      {/* <MDBox>
         <DataTable
           table={{ columns, rows }}
           showTotalEntries={false}
@@ -96,7 +96,7 @@ function Projects() {
           noEndBorder
           entriesPerPage={false}
         />
-      </MDBox>
+      </MDBox> */}
     </Card>
   );
 }
