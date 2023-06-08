@@ -13,10 +13,10 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 // @mui material components
-import Grid from "@mui/material/Grid";
+// import Grid from "@mui/material/Grid";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -24,38 +24,38 @@ import MDBox from "components/MDBox";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
-import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
-import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
+// import Footer from "examples/Footer";
+// import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
+// import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
+// import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 
 // Data
-import reportsBarChartData from "layouts/rtl/data/reportsBarChartData";
-import reportsLineChartData from "layouts/rtl/data/reportsLineChartData";
+// import reportsBarChartData from "layouts/rtl/data/reportsBarChartData";
+// import reportsLineChartData from "layouts/rtl/data/reportsLineChartData";
 
 // RTL components
-import Projects from "layouts/rtl/components/Projects";
-import OrdersOverview from "layouts/rtl/components/OrdersOverview";
+// import Projects from "layouts/rtl/components/Projects";
+// import OrdersOverview from "layouts/rtl/components/OrdersOverview";
 
 // Material Dashboard 2 React contexts
-import { useMaterialUIController, setDirection } from "context";
+// import { useMaterialUIController, setDirection } from "context";
 
 function RTL() {
-  const [, dispatch] = useMaterialUIController();
-  const { sales, tasks } = reportsLineChartData;
+  // const [, dispatch] = useMaterialUIController();
+  // const { sales, tasks } = reportsLineChartData;
 
   // Changing the direction to rtl
-  useEffect(() => {
-    setDirection(dispatch, "rtl");
+  // useEffect(() => {
+  //   setDirection(dispatch, "rtl");
 
-    return () => setDirection(dispatch, "ltr");
-  }, []);
+  //   return () => setDirection(dispatch, "ltr");
+  // }, []);
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox py={3}>
-        <Grid container spacing={3}>
+        {/* <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
@@ -166,9 +166,9 @@ function RTL() {
               <OrdersOverview />
             </Grid>
           </Grid>
-        </MDBox>
+        </MDBox> */}
       </MDBox>
-      <Footer />
+      {/* <Footer /> */}
     </DashboardLayout>
   );
 }

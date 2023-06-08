@@ -15,14 +15,14 @@ Coded by www.creative-tim.com
 
 // @mui material components
 import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React example components
-import TimelineItem from "examples/Timeline/TimelineItem";
+// import TimelineItem from "examples/Timeline/TimelineItem";
 
 function OrdersOverview() {
   return (
@@ -31,7 +31,7 @@ function OrdersOverview() {
         <MDTypography variant="h6" fontWeight="medium">
           Orders overview
         </MDTypography>
-        <MDBox mt={0} mb={2}>
+        {/* <MDBox mt={0} mb={2}>
           <MDTypography variant="button" color="text" fontWeight="regular">
             <MDTypography display="inline" variant="body2" verticalAlign="middle">
               <Icon sx={{ color: ({ palette: { success } }) => success.main }}>arrow_upward</Icon>
@@ -42,9 +42,9 @@ function OrdersOverview() {
             </MDTypography>{" "}
             this month
           </MDTypography>
-        </MDBox>
+        </MDBox> */}
       </MDBox>
-      <MDBox p={2}>
+      {/* <MDBox p={2}>
         <TimelineItem
           color="success"
           icon="notifications"
@@ -76,7 +76,7 @@ function OrdersOverview() {
           dateTime="18 DEC 4:54 AM"
           lastItem
         />
-      </MDBox>
+      </MDBox> */}
     </Card>
   );
 }

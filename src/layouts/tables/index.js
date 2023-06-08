@@ -24,16 +24,16 @@ import MDTypography from "components/MDTypography";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
-import DataTable from "examples/Tables/DataTable";
+// import Footer from "examples/Footer";
+// import DataTable from "examples/Tables/DataTable";
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
-import projectsTableData from "layouts/tables/data/projectsTableData";
+// import authorsTableData from "layouts/tables/data/authorsTableData";
+// import projectsTableData from "layouts/tables/data/projectsTableData";
 
 function Tables() {
-  const { columns, rows } = authorsTableData();
-  const { columns: pColumns, rows: pRows } = projectsTableData();
+  // const { columns, rows } = authorsTableData();
+  // const { columns: pColumns, rows: pRows } = projectsTableData();
 
   return (
     <DashboardLayout>
@@ -56,7 +56,7 @@ function Tables() {
                   Authors Table
                 </MDTypography>
               </MDBox>
-              <MDBox pt={3}>
+              {/* <MDBox pt={3}>
                 <DataTable
                   table={{ columns, rows }}
                   isSorted={false}
@@ -64,7 +64,7 @@ function Tables() {
                   showTotalEntries={false}
                   noEndBorder
                 />
-              </MDBox>
+              </MDBox> */}
             </Card>
           </Grid>
           <Grid item xs={12}>
@@ -83,7 +83,7 @@ function Tables() {
                   Projects Table
                 </MDTypography>
               </MDBox>
-              <MDBox pt={3}>
+              {/* <MDBox pt={3}>
                 <DataTable
                   table={{ columns: pColumns, rows: pRows }}
                   isSorted={false}
@@ -91,12 +91,12 @@ function Tables() {
                   showTotalEntries={false}
                   noEndBorder
                 />
-              </MDBox>
+              </MDBox> */}
             </Card>
           </Grid>
         </Grid>
       </MDBox>
-      <Footer />
+      {/* <Footer /> */}
     </DashboardLayout>
   );
 }

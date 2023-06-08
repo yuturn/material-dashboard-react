@@ -42,8 +42,8 @@ import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+// import SignIn from "layouts/authentication/sign-in";
+// import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -59,60 +59,60 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
+    name: "機台狀態",
+    key: "Equiments",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/tables",
+    route: "/Equiments",
     component: <Tables />,
   },
   {
     type: "collapse",
-    name: "Billing",
-    key: "billing",
+    name: "耗材狀態",
+    key: "Materials",
     icon: <Icon fontSize="small">receipt_long</Icon>,
-    route: "/billing",
+    route: "/Materials",
     component: <Billing />,
   },
   {
     type: "collapse",
-    name: "RTL",
-    key: "rtl",
+    name: "備份頁面",
+    key: "backup",
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
-    route: "/rtl",
+    route: "/backup",
     component: <RTL />,
   },
   {
     type: "collapse",
-    name: "Notifications",
-    key: "notifications",
+    name: "權限控管",
+    key: "permissions",
     icon: <Icon fontSize="small">notifications</Icon>,
-    route: "/notifications",
+    route: "/permissions",
     component: <Notifications />,
   },
   {
     type: "collapse",
-    name: "Profile",
-    key: "profile",
+    name: "Log查詢頁面",
+    key: "LOG",
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/profile",
+    route: "/LOG",
     component: <Profile />,
   },
-  {
-    type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
-    component: <SignIn />,
-  },
-  {
-    type: "collapse",
-    name: "Sign Up",
-    key: "sign-up",
-    icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/authentication/sign-up",
-    component: <SignUp />,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Sign In",
+  //   key: "sign-in",
+  //   icon: <Icon fontSize="small">login</Icon>,
+  //   route: "/authentication/sign-in",
+  //   component: <SignIn />,
+  // },
+  // {
+  //   type: "collapse",
+  //   name: "Sign Up",
+  //   key: "sign-up",
+  //   icon: <Icon fontSize="small">assignment</Icon>,
+  //   route: "/authentication/sign-up",
+  //   component: <SignUp />,
+  // },
 ];
 
 export default routes;
