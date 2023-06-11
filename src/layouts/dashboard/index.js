@@ -22,7 +22,7 @@ import MDBox from "components/MDBox";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import { ThemeProvider, createTheme, Card } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material";
 // import Footer from "examples/Footer";
 // import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 // import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
