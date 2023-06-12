@@ -1,33 +1,19 @@
-// import { useEffect } from "react";
-
-// @mui material components
-// import Grid from "@mui/material/Grid";
-
-// Material Dashboard 2 React components
-// import MDBox from "components/MDBox";
-
-// Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-// import Footer from "examples/Footer";
-// import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
-// import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-// import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
-
-// Data
-// import reportsBarChartData from "layouts/rtl/data/reportsBarChartData";
-// import reportsLineChartData from "layouts/rtl/data/reportsLineChartData";
-
-// RTL components
-// import Projects from "layouts/rtl/components/Projects";
-// import OrdersOverview from "layouts/rtl/components/OrdersOverview";
-
-// Material Dashboard 2 React contexts
-// import { useMaterialUIController, setDirection } from "context";
 
 import Grid from "@mui/material/Grid";
-// import Box from "@mui/material/Box";
+import LoadingButton from "@mui/lab/LoadingButton";
+import { useState } from "react";
+
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+
 import {
+  Box,
+  Button,
   Card,
   ThemeProvider,
   createTheme,
@@ -41,6 +27,9 @@ import {
 const completedBackupTime = "2023/06/11";
 const differentBackupTime = "2023/06/12";
 const manualBackupTime = "2023/06/12";
+const loading = false;
+
+const handleOnClick = () => {};
 
 const darkTheme = createTheme({
   palette: {
@@ -62,6 +51,13 @@ const darkTheme = createTheme({
 });
 
 function RTL() {
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <ThemeProvider theme={darkTheme}>
       <DashboardLayout>
@@ -87,175 +83,297 @@ function RTL() {
           <CardHeader title="設定" />
           <Divider sx={{ borderBottomWidth: 3 }} />
           <CardContent>
-            <Grid container spacing={4}>
+            <Grid container spacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               <Grid item xs={12}>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  完整備份時間
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    pt: 2,
+                  }}
+                >
+                  <Typography
+                    variant="overline"
+                    fontSize="large"
+                    vertical-align="middle"
+                    sx={{ mt: 1 }}
+                  >
+                    完整備份時間:
+                  </Typography>
                   <TextField
-                    label="請輸入備份時間,152359"
+                    label="請輸入完整備份時間"
                     margin="normal"
                     name="fullbackup"
                     id="fullbackup"
                     variant="outlined"
                     size="small"
+                    sx={{ ml: 2 }}
                   />
-                </Typography>
+                  <LoadingButton
+                    variant="contained"
+                    size="large"
+                    component="span"
+                    sx={{
+                      borderRadius: 4,
+                      justifyContent: "center",
+                      letterSpacing: 3,
+                      mt: 2,
+                      ml: 2,
+                    }}
+                    loading={loading}
+                    onClick={handleOnClick}
+                  >
+                    還原
+                  </LoadingButton>
+                </Box>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  差異備份時間
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    pt: 2,
+                  }}
+                >
+                  <Typography
+                    variant="overline"
+                    fontSize="large"
+                    vertical-align="middle"
+                    sx={{ mt: 1 }}
+                  >
+                    差異備份時間:
+                  </Typography>
                   <TextField
-                    label="請輸入備份時間,152359"
+                    label="請輸入差異備份時間"
                     margin="normal"
                     name="diffbackup"
                     id="diffbackup"
                     variant="outlined"
                     size="small"
+                    sx={{ ml: 2 }}
                   />
-                </Typography>
+                  <LoadingButton
+                    variant="contained"
+                    size="large"
+                    component="span"
+                    sx={{
+                      borderRadius: 4,
+                      justifyContent: "center",
+                      letterSpacing: 3,
+                      mt: 2,
+                      ml: 2,
+                    }}
+                    loading={loading}
+                    onClick={handleOnClick}
+                  >
+                    還原
+                  </LoadingButton>
+                </Box>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 3 }}>
-                  備份目的地1:
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    pt: 2,
+                  }}
+                >
+                  <Typography
+                    variant="overline"
+                    fontSize="large"
+                    vertical-align="middle"
+                    sx={{ mt: 1 }}
+                  >
+                    備份目的地1:
+                  </Typography>
                   <TextField
-                    label="請輸入備份時間,152359"
+                    label="請輸入ip位址"
                     margin="normal"
                     name="ip1"
                     id="ip1"
                     variant="outlined"
                     size="small"
+                    sx={{ ml: 2 }}
                   />
-                </Typography>
+                  <LoadingButton
+                    variant="contained"
+                    size="large"
+                    component="span"
+                    sx={{
+                      borderRadius: 4,
+                      justifyContent: "center",
+                      letterSpacing: 3,
+                      mt: 2,
+                      ml: 2,
+                    }}
+                    loading={loading}
+                    onClick={handleOnClick}
+                  >
+                    更改
+                  </LoadingButton>
+                </Box>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 3 }}>
-                  備份目的地2:
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    pt: 2,
+                  }}
+                >
+                  <Typography
+                    variant="overline"
+                    fontSize="large"
+                    vertical-align="middle"
+                    sx={{ mt: 2 }}
+                  >
+                    備份目的地2:
+                  </Typography>
                   <TextField
-                    label="請輸入備份時間,152359"
+                    label="請輸入ip位址"
                     margin="normal"
                     name="ip2"
                     id="ip2"
                     variant="outlined"
                     size="small"
+                    sx={{ ml: 1 }}
                   />
-                </Typography>
+                  <LoadingButton
+                    variant="contained"
+                    size="large"
+                    component="span"
+                    sx={{
+                      borderRadius: 4,
+                      justifyContent: "center",
+                      letterSpacing: 3,
+                      mt: 2,
+                      ml: 2,
+                    }}
+                    loading={loading}
+                    onClick={handleOnClick}
+                  >
+                    更改
+                  </LoadingButton>
+                </Box>
               </Grid>
             </Grid>
           </CardContent>
         </Card>
-        {/* <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <ComplexStatisticsCard
-                  color="dark"
-                  icon="weekend"
-                  title="أموال اليوم"
-                  count={281}
-                  percentage={{
-                    color: "success",
-                    amount: "+55%",
-                    label: "من الأسبوع الماضي",
+        <Card>
+          <CardHeader title="手動備份" />
+          <Divider sx={{ borderBottomWidth: 3 }} />
+          <CardContent>
+            <Grid container spacing={4}>
+              <Grid item xs={12}>
+                <LoadingButton
+                  variant="contained"
+                  size="large"
+                  component="span"
+                  sx={{
+                    borderRadius: 4,
+                    justifyContent: "center",
+                    letterSpacing: 3,
+                    mt: 2,
                   }}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <ComplexStatisticsCard
-                  icon="leaderboard"
-                  title="مستخدمو اليوم"
-                  count="2,300"
-                  percentage={{
-                    color: "success",
-                    amount: "+3%",
-                    label: "من الأسبوع الماضي",
+                  loading={loading}
+                  onClick={handleClickOpen}
+                >
+                  手動完整備份
+                </LoadingButton>
+                <Dialog
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                >
+                  <DialogTitle id="alert-dialog-title">是否手動備份?</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      按下確認按鈕後將會進行手動備份
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose} autoFocus variant="contained">
+                      確認
+                    </Button>
+                    <Button onClick={handleClose} autoFocus variant="contained">
+                      关闭
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+              </Grid>
+              <Grid item xs={12}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    pt: 2,
                   }}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <ComplexStatisticsCard
-                  color="success"
-                  icon="store"
-                  title="عملاء جدد"
-                  count="34k"
-                  percentage={{
-                    color: "success",
-                    amount: "+1%",
-                    label: "من الشهر الماضي",
-                  }}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <ComplexStatisticsCard
-                  color="primary"
-                  icon="person_add"
-                  title="مبيعات"
-                  count="+91"
-                  percentage={{
-                    color: "success",
-                    amount: "",
-                    label: "مقارنة بيوم أمس",
-                  }}
-                />
-              </MDBox>
-            </Grid>
-          </Grid>
-          <MDBox mt={4.5}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6} lg={4}>
-                <MDBox mb={3}>
-                  <ReportsBarChart
-                    color="info"
-                    title="مشاهدات الموقع"
-                    description="آخر أداء للحملة"
-                    date="الحملة أرسلت قبل يومين"
-                    chart={reportsBarChartData}
+                >
+                  <Typography
+                    variant="overline"
+                    fontSize="large"
+                    vertical-align="middle"
+                    sx={{ mt: 1, mr: 2 }}
+                  >
+                    完整備份路徑:
+                  </Typography>
+                  <TextField
+                    label="請輸入ip位址"
+                    margin="normal"
+                    name="reductionip1"
+                    id="reductionip1"
+                    variant="outlined"
+                    size="small"
                   />
-                </MDBox>
+                </Box>
               </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <MDBox mb={3}>
-                  <ReportsLineChart
-                    color="success"
-                    title="المبيعات اليومية"
-                    description={
-                      <>
-                        (<strong>+15%</strong>) زيادة في مبيعات اليوم..
-                      </>
-                    }
-                    date="تم التحديث منذ 4 دقائق"
-                    chart={sales}
+              <Grid item xs={12}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    pt: 2,
+                  }}
+                >
+                  <Typography
+                    variant="overline"
+                    fontSize="large"
+                    vertical-align="middle"
+                    sx={{ mt: 1, mr: 2 }}
+                  >
+                    差異備份路徑:
+                  </Typography>
+                  <TextField
+                    label="請輸入ip位址"
+                    margin="normal"
+                    name="reductionip1"
+                    id="reductionip1"
+                    variant="outlined"
+                    size="small"
                   />
-                </MDBox>
+                </Box>
               </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <MDBox mb={3}>
-                  <ReportsLineChart
-                    color="dark"
-                    title="المهام المكتملة"
-                    description="آخر أداء للحملة"
-                    date="تم تحديثه للتو"
-                    chart={tasks}
-                  />
-                </MDBox>
+              <Grid item xs={12}>
+                <LoadingButton
+                  variant="contained"
+                  size="large"
+                  component="span"
+                  sx={{
+                    borderRadius: 4,
+                    justifyContent: "center",
+                    letterSpacing: 3,
+                    mt: 2,
+                  }}
+                  loading={loading}
+                  onClick={handleOnClick}
+                >
+                  還原
+                </LoadingButton>
               </Grid>
             </Grid>
-          </MDBox>
-          <MDBox>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6} lg={8}>
-                <Projects />
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <OrdersOverview />
-              </Grid>
-            </Grid>
-          </MDBox> */}
-        {/* <Footer /> */}
+          </CardContent>
+        </Card>
       </DashboardLayout>
     </ThemeProvider>
   );
