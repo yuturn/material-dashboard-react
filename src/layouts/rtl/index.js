@@ -11,6 +11,12 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
+// 日期和時間的選單
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+
 import {
   Box,
   Button,
@@ -24,12 +30,10 @@ import {
   Typography,
 } from "@mui/material";
 
-const completedBackupTime = "2023/06/11";
-const differentBackupTime = "2023/06/12";
-const manualBackupTime = "2023/06/12";
+const completedBackupTime = "2023/06/11 12:30:00";
+const differentBackupTime = "2023/06/12 12:30:00";
+const manualBackupTime = "2023/06/12 12:30:00";
 const loading = false;
-
-const handleOnClick = () => {};
 
 const darkTheme = createTheme({
   palette: {
@@ -51,13 +55,22 @@ const darkTheme = createTheme({
 });
 
 function RTL() {
-  const [open, setOpen] = useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
+  const [manualOpen, setManualOpen] = useState(false);
+  const [backupOpen, setBackupOpen] = useState(false);
+  const handleOnClick = () => {};
+  const backupHandleClickOpen = () => {
+    setBackupOpen(true);
   };
-  const handleClose = () => {
-    setOpen(false);
+  const backupHandleClose = () => {
+    setBackupOpen(false);
   };
+  const manualHandleClickOpen = () => {
+    setManualOpen(true);
+  };
+  const manualHandleClose = () => {
+    setManualOpen(false);
+  };
+
   return (
     <ThemeProvider theme={darkTheme}>
       <DashboardLayout>
@@ -96,19 +109,15 @@ function RTL() {
                     variant="overline"
                     fontSize="large"
                     vertical-align="middle"
-                    sx={{ mt: 1 }}
+                    sx={{ mt: 1, mr: 2 }}
                   >
                     完整備份時間:
                   </Typography>
-                  <TextField
-                    label="請輸入完整備份時間"
-                    margin="normal"
-                    name="fullbackup"
-                    id="fullbackup"
-                    variant="outlined"
-                    size="small"
-                    sx={{ ml: 2 }}
-                  />
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["DateTimePicker"]}>
+                      <DateTimePicker label="請輸入完整備份時間" />
+                    </DemoContainer>
+                  </LocalizationProvider>
                   <LoadingButton
                     variant="contained"
                     size="large"
@@ -123,7 +132,7 @@ function RTL() {
                     loading={loading}
                     onClick={handleOnClick}
                   >
-                    還原
+                    更改
                   </LoadingButton>
                 </Box>
               </Grid>
@@ -139,19 +148,15 @@ function RTL() {
                     variant="overline"
                     fontSize="large"
                     vertical-align="middle"
-                    sx={{ mt: 1 }}
+                    sx={{ mt: 1, mr: 2 }}
                   >
                     差異備份時間:
                   </Typography>
-                  <TextField
-                    label="請輸入差異備份時間"
-                    margin="normal"
-                    name="diffbackup"
-                    id="diffbackup"
-                    variant="outlined"
-                    size="small"
-                    sx={{ ml: 2 }}
-                  />
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["DateTimePicker"]}>
+                      <DateTimePicker label="請輸入差異備份時間" />
+                    </DemoContainer>
+                  </LocalizationProvider>
                   <LoadingButton
                     variant="contained"
                     size="large"
@@ -166,7 +171,7 @@ function RTL() {
                     loading={loading}
                     onClick={handleOnClick}
                   >
-                    還原
+                    更改
                   </LoadingButton>
                 </Box>
               </Grid>
@@ -276,13 +281,13 @@ function RTL() {
                     mt: 2,
                   }}
                   loading={loading}
-                  onClick={handleClickOpen}
+                  onClick={manualHandleClickOpen}
                 >
                   手動完整備份
                 </LoadingButton>
                 <Dialog
-                  open={open}
-                  onClose={handleClose}
+                  open={manualOpen}
+                  onClose={manualHandleClose}
                   aria-labelledby="alert-dialog-title"
                   aria-describedby="alert-dialog-description"
                 >
@@ -293,10 +298,10 @@ function RTL() {
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={handleClose} autoFocus variant="contained">
+                    <Button onClick={manualHandleClose} autoFocus variant="contained">
                       確認
                     </Button>
-                    <Button onClick={handleClose} autoFocus variant="contained">
+                    <Button onClick={manualHandleClose} autoFocus variant="contained">
                       关闭
                     </Button>
                   </DialogActions>
@@ -366,10 +371,31 @@ function RTL() {
                     mt: 2,
                   }}
                   loading={loading}
-                  onClick={handleOnClick}
+                  onClick={backupHandleClickOpen}
                 >
                   還原
                 </LoadingButton>
+                <Dialog
+                  open={backupOpen}
+                  onClose={backupHandleClose}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                >
+                  <DialogTitle id="alert-dialog-title">是否進行還原?</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      按下確認按鈕後將會進行還原
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={backupHandleClose} autoFocus variant="contained">
+                      確認
+                    </Button>
+                    <Button onClick={backupHandleClose} autoFocus variant="contained">
+                      关闭
+                    </Button>
+                  </DialogActions>
+                </Dialog>
               </Grid>
             </Grid>
           </CardContent>
