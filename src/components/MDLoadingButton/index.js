@@ -24,9 +24,21 @@ import MDButtonRoot from "components/MDButton/MDButtonRoot";
 // Material Dashboard 2 React contexts
 import { useMaterialUIController } from "context";
 
-const MDButton = forwardRef(
+const MDLoadingButton = forwardRef(
   (
-    { color, variant, size, circular, iconOnly, children, verticalAlign, alignItems, ...rest },
+    {
+      color,
+      variant,
+      size,
+      circular,
+      iconOnly,
+      children,
+      verticalAlign,
+      alignItems,
+      loading,
+      onClick,
+      ...rest
+    },
     ref
   ) => {
     const [controller] = useMaterialUIController();
@@ -48,6 +60,8 @@ const MDButton = forwardRef(
           darkMode,
           verticalAlign,
           alignItems,
+          loading,
+          onClick,
         }}
       >
         {children}
@@ -57,7 +71,7 @@ const MDButton = forwardRef(
 );
 
 // Setting default values for the props of MDButton
-MDButton.defaultProps = {
+MDLoadingButton.defaultProps = {
   size: "medium",
   variant: "contained",
   color: "white",
@@ -65,10 +79,12 @@ MDButton.defaultProps = {
   iconOnly: false,
   verticalAlign: "unset",
   alignItems: "center",
+  loading: {},
+  onClick: {},
 };
 
 // Typechecking props for the MDButton
-MDButton.propTypes = {
+MDLoadingButton.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "large"]),
   variant: PropTypes.oneOf(["text", "contained", "outlined", "gradient"]),
   color: PropTypes.oneOf([
@@ -97,6 +113,7 @@ MDButton.propTypes = {
     "bottom",
   ]),
   alignItems: PropTypes.oneOf(["center", "left", "right"]),
+  loading: PropTypes.func,
+  onClick: PropTypes.func,
 };
-
-export default MDButton;
+export default MDLoadingButton;

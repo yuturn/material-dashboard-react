@@ -37,12 +37,12 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
-import Tables from "layouts/tables";
-import Billing from "layouts/billing";
-import RTL from "layouts/rtl";
-import Notifications from "layouts/notifications";
-import Profile from "layouts/profile";
-// import SignIn from "layouts/authentication/sign-in";
+import Equiments from "layouts/equiments";
+import Materials from "layouts/materials";
+import Backup from "layouts/backup";
+import Projects from "layouts/projects";
+import LOG from "layouts/LOG";
+import Permission from "layouts/permission";
 // import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
@@ -63,7 +63,7 @@ const routes = [
     key: "Equiments",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/Equiments",
-    component: <Tables />,
+    component: <Equiments />,
   },
   {
     type: "collapse",
@@ -71,7 +71,7 @@ const routes = [
     key: "Materials",
     icon: <Icon fontSize="small">receipt_long</Icon>,
     route: "/Materials",
-    component: <Billing />,
+    component: <Materials />,
   },
   {
     type: "collapse",
@@ -79,15 +79,23 @@ const routes = [
     key: "backup",
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
     route: "/backup",
-    component: <RTL />,
+    component: <Backup />,
   },
   {
     type: "collapse",
     name: "權限控管",
-    key: "permissions",
+    key: "permission",
+    icon: <Icon fontSize="small">login</Icon>,
+    route: "/permission",
+    component: <Permission />,
+  },
+  {
+    type: "collapse",
+    name: "專案頁面",
+    key: "project",
     icon: <Icon fontSize="small">notifications</Icon>,
-    route: "/permissions",
-    component: <Notifications />,
+    route: "/projects",
+    component: <Projects />,
   },
   {
     type: "collapse",
@@ -95,16 +103,8 @@ const routes = [
     key: "LOG",
     icon: <Icon fontSize="small">person</Icon>,
     route: "/LOG",
-    component: <Profile />,
+    component: <LOG />,
   },
-  // {
-  //   type: "collapse",
-  //   name: "Sign In",
-  //   key: "sign-in",
-  //   icon: <Icon fontSize="small">login</Icon>,
-  //   route: "/authentication/sign-in",
-  //   component: <SignIn />,
-  // },
   // {
   //   type: "collapse",
   //   name: "Sign Up",
