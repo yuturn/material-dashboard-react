@@ -13,16 +13,11 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
-
-// react-router-dom components
-// import { Link } from "react-router-dom";
+// import { useState } from "react";
 
 // @mui material components
-import Card from "@mui/material/Card";
-// import Switch from "@mui/material/Switch";
-import Grid from "@mui/material/Grid";
-// import MuiLink from "@mui/material/Link";
+// import Card from "@mui/material/Card";
+// import Grid from "@mui/material/Grid";
 
 // @mui icons
 // import FacebookIcon from "@mui/icons-material/Facebook";
@@ -30,55 +25,54 @@ import Grid from "@mui/material/Grid";
 // import GoogleIcon from "@mui/icons-material/Google";
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDInput from "components/MDInput";
-import MDButton from "components/MDButton";
+// import MDBox from "components/MDBox";
+// import MDTypography from "components/MDTypography";
+// import MDInput from "components/MDInput";
+// import MDButton from "components/MDButton";
 // import MDLoadingButton from "components/MDLoadingButton";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
+// import Select from "@mui/material/Select";
+// import MenuItem from "@mui/material/MenuItem";
+// import InputLabel from "@mui/material/InputLabel";
+// import FormControl from "@mui/material/FormControl";
 // Authentication layout components
 // import BasicLayout from "layouts/authentication/components/BasicLayout";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+// import Dialog from "@mui/material/Dialog";
+// import DialogActions from "@mui/material/DialogActions";
+// import DialogContent from "@mui/material/DialogContent";
+// import DialogContentText from "@mui/material/DialogContentText";
+// import DialogTitle from "@mui/material/DialogTitle";
 // Images
 // import Button from "@mui/material";
 // import LoadingButton from "@mui/lab/LoadingButton";
 // import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 function Basic() {
-  const [age, setAge] = useState("");
-  const [permissionOpen, setPermissionOpen] = useState(false);
-  const [permissionDeleteOpen, setPermissionDeleteOpen] = useState(false);
-  // const loading = false;
+  // const [age, setAge] = useState("");
+  // const [permissionOpen, setPermissionOpen] = useState(false);
+  // const [permissionDeleteOpen, setPermissionDeleteOpen] = useState(false);
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-  const permissionHandleClickOpen = () => {
-    setPermissionOpen(true);
-  };
-  const permissionHandleClose = () => {
-    setPermissionOpen(false);
-  };
-  const permissionDeleteHandleClickOpen = () => {
-    setPermissionDeleteOpen(true);
-  };
-  const permissionDeleteHandleClose = () => {
-    setPermissionDeleteOpen(false);
-  };
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
+  // const permissionHandleClickOpen = () => {
+  //   setPermissionOpen(true);
+  // };
+  // const permissionHandleClose = () => {
+  //   setPermissionOpen(false);
+  // };
+  // const permissionDeleteHandleClickOpen = () => {
+  //   setPermissionDeleteOpen(true);
+  // };
+  // const permissionDeleteHandleClose = () => {
+  //   setPermissionDeleteOpen(false);
+  // };
 
   return (
     <DashboardLayout>
       <DashboardNavbar absolute isMini />
-      <MDBox mt={8}>
+      {/* <MDBox mt={8}>
         <MDBox mb={3}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
@@ -130,21 +124,6 @@ function Basic() {
                       <MDButton variant="gradient" color="info">
                         新增
                       </MDButton>
-                    </MDBox>
-                    <MDBox mt={3} mb={1} textAlign="center">
-                      <MDTypography variant="button" color="text">
-                        {/* Don&apos;t have an account?{" "} */}
-                        {/* <MDTypography
-                          component={Link}
-                          to="/authentication/sign-up"
-                          variant="button"
-                          color="info"
-                          fontWeight="medium"
-                          textGradient
-                        >
-                          Sign up
-                        </MDTypography> */}
-                      </MDTypography>
                     </MDBox>
                   </MDBox>
                 </MDBox>
@@ -265,28 +244,13 @@ function Basic() {
                         </DialogActions>
                       </Dialog>
                     </MDBox>
-                    <MDBox mt={3} mb={1} textAlign="center">
-                      <MDTypography variant="button" color="text">
-                        {/* Don&apos;t have an account?{" "} */}
-                        {/* <MDTypography
-                          component={Link}
-                          to="/authentication/sign-up"
-                          variant="button"
-                          color="info"
-                          fontWeight="medium"
-                          textGradient
-                        >
-                          Sign up
-                        </MDTypography> */}
-                      </MDTypography>
-                    </MDBox>
                   </MDBox>
                 </MDBox>
               </Card>
             </Grid>
           </Grid>
         </MDBox>
-      </MDBox>
+      </MDBox> */}
     </DashboardLayout>
   );
 }
