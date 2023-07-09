@@ -89,7 +89,21 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         專案名稱:
                       </MDTypography>
-                      <MDInput type="projec-name" label="專案名稱" />
+                      <FormControl>
+                        <InputLabel id="demo-simple-select-label">專案</InputLabel>
+                        <Select
+                          labelId="permission-select-label"
+                          id="permission-select"
+                          value={age}
+                          label="專案"
+                          onChange={handleChange}
+                          style={{ minWidth: "200px", height: "45px" }}
+                        >
+                          <MenuItem value={10}>專案 A</MenuItem>
+                          <MenuItem value={20}>專案 B</MenuItem>
+                          <MenuItem value={30}>專案 C</MenuItem>
+                        </Select>
+                      </FormControl>
                       <MDButton
                         variant="gradient"
                         color="error"
@@ -130,7 +144,7 @@ function Notifications() {
                       </Dialog>
                     </MDBox>
                     <MDTypography variant="h4" fontWeight="medium" mt={3}>
-                      編輯專案
+                      編輯專案人員
                     </MDTypography>
                     <MDBox display="flex" alignItems="center" pt={3} px={2}>
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
@@ -151,12 +165,15 @@ function Notifications() {
                           <MenuItem value={30}>專案 C</MenuItem>
                         </Select>
                       </FormControl>
+                      <MDButton variant="gradient" color="info" ml={2}>
+                        查詢
+                      </MDButton>
                     </MDBox>
                     <MDBox display="flex" alignItems="center" pt={3} px={2}>
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         人員查詢:
                       </MDTypography>
-                      <MDInput type="search-staff" label="人員查詢" />
+                      <MDInput type="search-staff" label="請輸入帳號" />
                       <MDButton variant="gradient" color="info" ml={2}>
                         查詢
                       </MDButton>
