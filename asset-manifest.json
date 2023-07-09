@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/material-dashboard-react/static/js/main.2db41967.js",
+    "main.js": "/material-dashboard-react/static/js/main.f899fdb5.js",
     "index.html": "/material-dashboard-react/index.html",
-    "main.2db41967.js.map": "/material-dashboard-react/static/js/main.2db41967.js.map"
+    "main.f899fdb5.js.map": "/material-dashboard-react/static/js/main.f899fdb5.js.map"
   },
   "entrypoints": [
-    "static/js/main.2db41967.js"
+    "static/js/main.f899fdb5.js"
   ]
 }
