@@ -93,9 +93,11 @@ function RTL() {
                           <DateTimePicker label="請輸入完整備份時間" />
                         </DemoContainer>
                       </LocalizationProvider>
-                      <MDButton variant="gradient" color="info">
-                        更改
-                      </MDButton>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          更改
+                        </MDButton>
+                      </MDBox>
                     </MDBox>
                     <MDBox display="flex" alignItems="center" pt={3} px={2}>
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
@@ -106,27 +108,33 @@ function RTL() {
                           <DateTimePicker label="請輸入差異備份時間" />
                         </DemoContainer>
                       </LocalizationProvider>
-                      <MDButton variant="gradient" color="info">
-                        更改
-                      </MDButton>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          更改
+                        </MDButton>
+                      </MDBox>
                     </MDBox>
                     <MDBox display="flex" alignItems="center" pt={3} px={2}>
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         備份目的地1:
                       </MDTypography>
                       <MDInput type="password" label="Password" />
-                      <MDButton variant="gradient" color="info">
-                        更改
-                      </MDButton>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          更改
+                        </MDButton>
+                      </MDBox>
                     </MDBox>
                     <MDBox display="flex" alignItems="center" pt={3} px={2}>
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         備份目的地2:
                       </MDTypography>
                       <MDInput type="password" label="Password" />
-                      <MDButton variant="gradient" color="info">
-                        更改
-                      </MDButton>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          更改
+                        </MDButton>
+                      </MDBox>
                     </MDBox>
                   </MDBox>
                 </MDBox>

@@ -77,7 +77,9 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         名稱:
                       </MDTypography>
-                      <MDInput type="projec-name" label="專案名稱" />
+                      <MDBox mr={2}>
+                        <MDInput type="projec-name" label="專案名稱" />
+                      </MDBox>
                       <MDButton variant="gradient" color="info">
                         新增
                       </MDButton>
@@ -89,21 +91,23 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         專案名稱:
                       </MDTypography>
-                      <FormControl>
-                        <InputLabel id="demo-simple-select-label">專案</InputLabel>
-                        <Select
-                          labelId="permission-select-label"
-                          id="permission-select"
-                          value={age}
-                          label="專案"
-                          onChange={handleChange}
-                          style={{ minWidth: "200px", height: "45px" }}
-                        >
-                          <MenuItem value={10}>專案 A</MenuItem>
-                          <MenuItem value={20}>專案 B</MenuItem>
-                          <MenuItem value={30}>專案 C</MenuItem>
-                        </Select>
-                      </FormControl>
+                      <MDBox mr={2}>
+                        <FormControl>
+                          <InputLabel id="demo-simple-select-label">專案</InputLabel>
+                          <Select
+                            labelId="permission-select-label"
+                            id="permission-select"
+                            value={age}
+                            label="專案"
+                            onChange={handleChange}
+                            style={{ minWidth: "200px", height: "45px" }}
+                          >
+                            <MenuItem value={10}>專案 A</MenuItem>
+                            <MenuItem value={20}>專案 B</MenuItem>
+                            <MenuItem value={30}>專案 C</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </MDBox>
                       <MDButton
                         variant="gradient"
                         color="error"
@@ -144,6 +148,109 @@ function Notifications() {
                       </Dialog>
                     </MDBox>
                     <MDTypography variant="h4" fontWeight="medium" mt={3}>
+                      專案機台
+                    </MDTypography>
+                    <MDBox display="flex" alignItems="center" pt={3} px={2}>
+                      <MDTypography variant="h5" fontWeight="medium" mr={2}>
+                        專案名稱:
+                      </MDTypography>
+                      <FormControl>
+                        <InputLabel id="demo-simple-select-label">專案</InputLabel>
+                        <Select
+                          labelId="permission-select-label"
+                          id="permission-select"
+                          value={age}
+                          label="專案"
+                          onChange={handleChange}
+                          style={{ minWidth: "200px", height: "45px" }}
+                        >
+                          <MenuItem value={10}>專案 A</MenuItem>
+                          <MenuItem value={20}>專案 B</MenuItem>
+                          <MenuItem value={30}>專案 C</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          查詢
+                        </MDButton>
+                      </MDBox>
+                    </MDBox>
+                    <MDBox display="flex" alignItems="center" pt={3} px={2}>
+                      <MDTypography variant="h5" fontWeight="medium" mr={2}>
+                        新增機台:
+                      </MDTypography>
+                      <MDBox mr={2}>
+                        <MDInput type="search-staff" label="請輸入機台名稱" />
+                      </MDBox>
+                      <MDButton variant="gradient" color="info">
+                        新增
+                      </MDButton>
+                    </MDBox>
+                    <MDTypography variant="h4" fontWeight="medium" mt={3}>
+                      編輯機台事件
+                    </MDTypography>
+                    <MDBox display="flex" alignItems="center" pt={3} px={2}>
+                      <MDTypography variant="h5" fontWeight="medium" mr={2}>
+                        專案名稱:
+                      </MDTypography>
+                      <FormControl>
+                        <InputLabel id="demo-simple-select-label">專案</InputLabel>
+                        <Select
+                          labelId="permission-select-label"
+                          id="permission-select"
+                          value={age}
+                          label="專案"
+                          onChange={handleChange}
+                          style={{ minWidth: "200px", height: "45px" }}
+                        >
+                          <MenuItem value={10}>專案 A</MenuItem>
+                          <MenuItem value={20}>專案 B</MenuItem>
+                          <MenuItem value={30}>專案 C</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          查詢
+                        </MDButton>
+                      </MDBox>
+                    </MDBox>
+                    <MDBox display="flex" alignItems="center" pt={3} px={2}>
+                      <MDTypography variant="h5" fontWeight="medium" mr={2}>
+                        機台名稱:
+                      </MDTypography>
+                      <FormControl>
+                        <InputLabel id="demo-simple-select-label">機台</InputLabel>
+                        <Select
+                          labelId="permission-select-label"
+                          id="permission-select"
+                          value={age}
+                          label="機台"
+                          onChange={handleChange}
+                          style={{ minWidth: "200px", height: "45px" }}
+                        >
+                          <MenuItem value={10}>機台 A</MenuItem>
+                          <MenuItem value={20}>機台 B</MenuItem>
+                          <MenuItem value={30}>機台 C</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          查詢
+                        </MDButton>
+                      </MDBox>
+                    </MDBox>
+                    <MDBox display="flex" alignItems="center" pt={3} px={2}>
+                      <MDTypography variant="h5" fontWeight="medium" mr={2}>
+                        事件名稱:
+                      </MDTypography>
+                      <MDBox mr={2}>
+                        <MDInput type="search-staff" label="請輸入事件名稱" />
+                      </MDBox>
+                      <MDButton variant="gradient" color="info">
+                        新增
+                      </MDButton>
+                    </MDBox>
+                    <MDTypography variant="h4" fontWeight="medium" mt={3}>
                       編輯專案人員
                     </MDTypography>
                     <MDBox display="flex" alignItems="center" pt={3} px={2}>
@@ -165,16 +272,20 @@ function Notifications() {
                           <MenuItem value={30}>專案 C</MenuItem>
                         </Select>
                       </FormControl>
-                      <MDButton variant="gradient" color="info" ml={2}>
-                        查詢
-                      </MDButton>
+                      <MDBox ml={2}>
+                        <MDButton variant="gradient" color="info">
+                          查詢
+                        </MDButton>
+                      </MDBox>
                     </MDBox>
                     <MDBox display="flex" alignItems="center" pt={3} px={2}>
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         人員查詢:
                       </MDTypography>
-                      <MDInput type="search-staff" label="請輸入帳號" />
-                      <MDButton variant="gradient" color="info" ml={2}>
+                      <MDBox mr={2}>
+                        <MDInput type="search-staff" label="請輸入帳號" />
+                      </MDBox>
+                      <MDButton variant="gradient" color="info">
                         查詢
                       </MDButton>
                     </MDBox>
@@ -182,8 +293,10 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         人員名稱:
                       </MDTypography>
-                      <MDInput type="add-staff" label="人員新增" />
-                      <MDButton variant="gradient" color="info" ml={2}>
+                      <MDBox mr={2}>
+                        <MDInput type="add-staff" label="人員新增" />
+                      </MDBox>
+                      <MDButton variant="gradient" color="info">
                         新增
                       </MDButton>
                     </MDBox>
