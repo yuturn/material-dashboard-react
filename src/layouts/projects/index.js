@@ -13,57 +13,55 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+// import { useState } from "react";
 
-// @mui material components
-import Grid from "@mui/material/Grid";
+// // @mui material components
+// import Grid from "@mui/material/Grid";
+// // import Card from "@mui/material/Card";
 // import Card from "@mui/material/Card";
-import Card from "@mui/material/Card";
-// Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDInput from "components/MDInput";
-import MDButton from "components/MDButton";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
+// // Material Dashboard 2 React components
+// import MDBox from "components/MDBox";
+// import MDTypography from "components/MDTypography";
+// import MDInput from "components/MDInput";
+// import MDButton from "components/MDButton";
+// import Select from "@mui/material/Select";
+// import MenuItem from "@mui/material/MenuItem";
+// import InputLabel from "@mui/material/InputLabel";
+// import FormControl from "@mui/material/FormControl";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 // import Footer from "examples/Footer";
 
-// Data
-import authorsTableData from "layouts/projects/data/authorsTableData";
-// import projectsTableData from "layouts/tables/data/projectsTableData";
-import DataTable from "examples/Tables/DataTable";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+// import authorsTableData from "layouts/projects/data/authorsTableData";
+// import DataTable from "examples/Tables/DataTable";
+// import Dialog from "@mui/material/Dialog";
+// import DialogActions from "@mui/material/DialogActions";
+// import DialogContent from "@mui/material/DialogContent";
+// import DialogContentText from "@mui/material/DialogContentText";
+// import DialogTitle from "@mui/material/DialogTitle";
 
 function Notifications() {
-  const [age, setAge] = useState("");
-  const [projectDeleteOpen, setProjectDeleteOpen] = useState(false);
+  // const [age, setAge] = useState("");
+  // const [projectDeleteOpen, setProjectDeleteOpen] = useState(false);
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-  const projectDeleteHandleClickOpen = () => {
-    setProjectDeleteOpen(true);
-  };
-  const projectDeleteHandleClose = () => {
-    setProjectDeleteOpen(false);
-  };
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
+  // const projectDeleteHandleClickOpen = () => {
+  //   setProjectDeleteOpen(true);
+  // };
+  // const projectDeleteHandleClose = () => {
+  //   setProjectDeleteOpen(false);
+  // };
 
-  const { columns, rows } = authorsTableData();
+  // const { columns, rows } = authorsTableData();
 
   return (
     <DashboardLayout>
       <DashboardNavbar absolute isMini />
-      <MDBox mt={8}>
+      {/* <MDBox mt={8}>
         <MDBox mb={3}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
@@ -337,7 +335,7 @@ function Notifications() {
             </Grid>
           </Grid>
         </MDBox>
-      </MDBox>
+      </MDBox> */}
     </DashboardLayout>
   );
 }
