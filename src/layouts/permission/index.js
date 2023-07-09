@@ -161,7 +161,9 @@ function Basic() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         帳號:
                       </MDTypography>
-                      <MDInput type="account" label="Account" />
+                      <MDBox mr={2}>
+                        <MDInput type="account" label="Account" />
+                      </MDBox>
                       <MDButton variant="gradient" color="info" ml={2}>
                         查詢
                       </MDButton>
@@ -192,9 +194,22 @@ function Basic() {
                       </FormControl>
                     </MDBox>
                     <MDBox mt={4} mb={1}>
-                      <MDButton variant="gradient" color="info" onClick={permissionHandleClickOpen}>
-                        更改權限
-                      </MDButton>
+                      <MDBox display="flex" justifyContent="space-between" alignItems="center">
+                        <MDButton
+                          variant="gradient"
+                          color="info"
+                          onClick={permissionHandleClickOpen}
+                        >
+                          更改權限
+                        </MDButton>
+                        <MDButton
+                          variant="gradient"
+                          color="error"
+                          onClick={permissionDeleteHandleClickOpen}
+                        >
+                          刪除人員
+                        </MDButton>
+                      </MDBox>
                       <Dialog
                         open={permissionOpen}
                         onClose={permissionHandleClose}
@@ -226,13 +241,6 @@ function Basic() {
                           </MDButton>
                         </DialogActions>
                       </Dialog>
-                      <MDButton
-                        variant="gradient"
-                        color="error"
-                        onClick={permissionDeleteHandleClickOpen}
-                      >
-                        刪除人員
-                      </MDButton>
                       <Dialog
                         open={permissionDeleteOpen}
                         onClose={permissionDeleteHandleClose}

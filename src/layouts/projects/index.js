@@ -77,7 +77,9 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         名稱:
                       </MDTypography>
-                      <MDInput type="projec-name" label="專案名稱" />
+                      <MDBox mr={2}>
+                        <MDInput type="projec-name" label="專案名稱" />
+                      </MDBox>
                       <MDButton variant="gradient" color="info">
                         新增
                       </MDButton>
@@ -89,7 +91,9 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         專案名稱:
                       </MDTypography>
-                      <MDInput type="projec-name" label="專案名稱" />
+                      <MDBox mr={2}>
+                        <MDInput type="projec-name" label="專案名稱" />
+                      </MDBox>
                       <MDButton
                         variant="gradient"
                         color="error"
@@ -156,7 +160,9 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         人員查詢:
                       </MDTypography>
-                      <MDInput type="search-staff" label="人員查詢" />
+                      <MDBox mr={2}>
+                        <MDInput type="search-staff" label="人員查詢" />
+                      </MDBox>
                       <MDButton variant="gradient" color="info" ml={2}>
                         查詢
                       </MDButton>
@@ -165,7 +171,9 @@ function Notifications() {
                       <MDTypography variant="h5" fontWeight="medium" mr={2}>
                         人員名稱:
                       </MDTypography>
-                      <MDInput type="add-staff" label="人員新增" />
+                      <MDBox mr={2}>
+                        <MDInput type="add-staff" label="人員新增" />
+                      </MDBox>
                       <MDButton variant="gradient" color="info" ml={2}>
                         新增
                       </MDButton>
