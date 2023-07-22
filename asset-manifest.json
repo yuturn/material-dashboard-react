@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/material-dashboard-react/static/js/main.f899fdb5.js",
+    "main.js": "/material-dashboard-react/static/js/main.c0e754a8.js",
+    "static/media/Foxlink-Img-2.jpg": "/material-dashboard-react/static/media/Foxlink-Img-2.6057025c858c2f91c354.jpg",
     "index.html": "/material-dashboard-react/index.html",
-    "main.f899fdb5.js.map": "/material-dashboard-react/static/js/main.f899fdb5.js.map"
+    "main.c0e754a8.js.map": "/material-dashboard-react/static/js/main.c0e754a8.js.map"
   },
   "entrypoints": [
-    "static/js/main.f899fdb5.js"
+    "static/js/main.c0e754a8.js"
   ]
 }
