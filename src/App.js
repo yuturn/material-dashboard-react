@@ -16,7 +16,8 @@ Coded by www.creative-tim.com
 import { useState, useEffect, useMemo } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, Router } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -49,11 +50,41 @@ import routes from "routes";
 // Material Dashboard 2 React contexts
 import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
+// Pages
+// import Login from './layouts/authentication/sign-in/index.js';
+
 // Images
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
+// import { from } from "stylis";
+// 更改首頁順序
+// import Login from './layouts/authentication/sign-in/index';
+// import SignUp from './layouts/authentication/sign-up/index';
+// import Dashboard from "./layouts/dashboard/index.js";
+// import Statistics from "./Statistics";
+// import QrcodeDownload from "./Qrcode";
+// import Map from "./Map";
+// import DevicesUpload from "./DevicesUpload";
+// import WorkerinfoUpload from "./WorkinfoUpload";
+// import MapUpload from "./MapUpload";
+// import WhiteList from "./WhiteList";
+// import ENRMission from "./OtherMission";
 
 export default function App() {
+  // const [alert, setAlert] = useState({
+  //   'open': false,
+  //   'type': '',
+  //   'msg': '',
+  //   'duration': 3000
+  // });
+  // // user auth
+  // const [authUser, setAuthUser] = useState({
+  //     'token': null,
+  //     'token_type': null,
+  //     'username': null,
+  //     'level': null,
+  // });
+
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
@@ -165,10 +196,34 @@ export default function App() {
           </>
         )}
         {layout === "vr" && <Configurator />}
-        <Routes>
-          {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboard" />} />
-        </Routes>
+        <Router>
+          <Routes>
+            {getRoutes(routes)}
+            <Route path="*" element={<Navigate to="/dashboard" />} />
+          </Routes>
+        </Router>
+        {/* <Router>
+          <Routes>
+              <Route element={<Login setAlert={setAlert} setUser={setAuthUser} />} path={'/login'}></Route>
+              <Route element={<SignUp authUser={authUser} />} path={'/'}>
+                  <Route element={<Dashboard token={authUser.token} setAlert={setAlert} />} path={'/all-status'}></Route>
+                  <Route element={<WorkerinfoUpload setAlert={setAlert} token={authUser.token} />} path={'/worker-info-upload'}></Route>
+                  <Route element={<DevicesUpload token={authUser.token} />} path={'/devices-upload'}></Route>
+                  <Route element={<Statistics token={authUser.token} setAlert={setAlert} />} path={'/statistics'}></Route>
+                  <Route element={<QrcodeDownload token={authUser.token} />} path={'/qrcode-download'}></Route>
+                  <Route element={<Map setAlert={setAlert} token={authUser.token} />} path={'/map'}></Route>
+                  <Route element={<MapUpload token={authUser.token} />} path={'/map-upload'}></Route>
+                  <Route element={<WhiteList token={authUser.token} />} path={'/white-list'}></Route>
+                  <Route element={<ENRMission token={authUser.token} />} path={'/ENRMission'}></Route>
+              </Route>
+              <Route
+                  path='*'
+                  element={
+                      <Navigate to="/login" replace />
+                  }
+              />
+          </Routes>
+        </Router> */}
       </ThemeProvider>
     </CacheProvider>
   ) : (

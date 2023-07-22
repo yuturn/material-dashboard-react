@@ -21,25 +21,24 @@ Coded by www.creative-tim.com
 // import FacebookIcon from "@mui/icons-material/Facebook";
 // import TwitterIcon from "@mui/icons-material/Twitter";
 // import InstagramIcon from "@mui/icons-material/Instagram";
-// import Card from "@mui/material/Card";
-// import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import Grid from "@mui/material/Grid";
 // Material Dashboard 2 React components
-// import MDBox from "components/MDBox";
-// import MDTypography from "components/MDTypography";
-// import DataTable from "examples/Tables/DataTable";
-// import MDTypography from "components/MDTypography";
+import MDBox from "components/MDBox";
+import MDTypography from "components/MDTypography";
+import DataTable from "examples/Tables/DataTable";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-// import authorsTableData from "layouts/LOG/data/authorsActions";
+import authorsTableData from "layouts/LOG/data/authorsActions";
 
 function Overview() {
-  // const { columns, rows } = authorsTableData();
+  const { columns, rows } = authorsTableData();
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      {/* <MDBox pt={6} pb={3}>
+      <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
           <Grid item xs={12}>
             <Card>
@@ -69,7 +68,7 @@ function Overview() {
             </Card>
           </Grid>
         </Grid>
-      </MDBox> */}
+      </MDBox>
     </DashboardLayout>
   );
 }
