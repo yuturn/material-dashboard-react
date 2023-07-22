@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2 React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -26,9 +26,6 @@ import MDBox from "components/MDBox";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
-// Authentication pages components
-import Footer from "layouts/authentication/components/Footer";
-
 function BasicLayout({ image, children }) {
   return (
     <PageLayout>
@@ -48,8 +45,8 @@ function BasicLayout({ image, children }) {
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             image &&
             `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
+              rgba(gradients.dark.main, 0.4),
+              rgba(gradients.dark.state, 0.4)
             )}, url(${image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -63,7 +60,6 @@ function BasicLayout({ image, children }) {
           </Grid>
         </Grid>
       </MDBox>
-      <Footer light />
     </PageLayout>
   );
 }
