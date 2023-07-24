@@ -84,7 +84,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "權限控管",
+    name: "人員控管",
     key: "permission",
     icon: <Icon fontSize="small">login</Icon>,
     route: "/permission",

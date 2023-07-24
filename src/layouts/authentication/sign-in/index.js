@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // import { useState } from "react";
 
 // react-router-dom components
@@ -30,6 +15,11 @@ import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
 
+import React, { useRef, useEffect } from "react";
+import { apiUserLogin} from "/home/jack/桌面/code/material-dashboard-react/src/api";
+import { useNavigate } from 'react-router-dom';
+// import { encrypt, verify } from "/home/jack/桌面/code/material-dashboard-react/src/tools/crypt";
+
 // Authentication layout components
 // import BasicLayout from "layouts/authentication/components/BasicLayout";
 import CoverLayout from "layouts/authentication/components/CoverLayout";
@@ -38,6 +28,52 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 import bgImage from "assets/images/Foxlink-Img-2.jpg";
 
 function Basic() {
+  // const navigate = useNavigate();
+  // const _isMounted = useRef(true);
+  // useEffect(() => {
+  //   return () => {
+  //       _isMounted.current = false;
+  //   }
+  // }, []);
+  // function handleOnClick() {
+  //   try {
+  //     let account = document.getElementById("account").value;
+  //     let password = document.getElementById("password").value;
+  //     const hashPassWord = encrypt("foxlink", "$5$rounds=10000$F0XL1NKPWDHaSH");
+  //     if (account == "" || password == "") throw "帐密不可為空";
+  //     apiUserLogin(`grant_type=&username=${account}&password=${hashPassWord}&scope=&client_id=123&client_secret=`)
+  //       .then(res => {
+  //         if (_isMounted.current) {
+  //           setUser({
+  //             'token': res.data['access_token'],
+  //             'token_type': res.data['token_type'],
+  //             'username': '',
+  //             'level': '',
+  //           })
+  //         }
+  //       })
+  //       .catch(err => {
+  //         let errMsg = '';
+  //         if (err.response && err.response.status == 401) errMsg = '帐密错误';
+  //         else if (err.response && err.response.status == 422) errMsg = '验证错误，请重试';
+  //         else errMsg = '服务器拒绝连线，请联络相关人员';
+  //         setAlert({
+  //           'open': true,
+  //           'msg': errMsg,
+  //           'type': 'error'
+  //         })
+  //       })
+  //   } catch (e) {
+  //     console.log(e);
+  //     setAlert({
+  //         'open': true,
+  //         'msg': e,
+  //         'type': 'error'
+  //     })
+  //   }
+  //   document.getElementById('account').value = "";
+  //   document.getElementById('password').value = "";
+  // }
   return (
     <CoverLayout image={bgImage}>
       <Card>

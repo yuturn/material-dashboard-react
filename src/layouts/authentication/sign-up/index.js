@@ -31,8 +31,44 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 // Images
 import bgImage from "assets/images/Foxlink-Img-2.jpg";
+// Path /home/jack/桌面/code/material-dashboard-react/src/layouts/authentication/sign-up/index.js
+import { apiCreateUser, apiPendingApprovalUser } from "/home/jack/桌面/code/material-dashboard-react/src/api";
+import Header from "layouts/LOG/components/Header";
 
-function Cover() {
+export default function SignUp() {
+  function handleOnClick() {
+    try {
+      const name = document.getElementById("name").value;
+      const acc = document.getElementById("account").value;
+      const passwd = document.getElementById("password").value;
+      // if (name === "" || acc === "" || passwd === "") { throw "帐密不可為空" };
+      const temp_data = {
+        "badge": name,
+        "username": acc,
+        "password": passwd
+      };
+      const data = JSON.stringify(temp_data)
+      fetch('http://192.168.0.115/users/pending-approval-user', {
+        method: 'POST',
+        body: data,
+        headers: {
+          'accept': 'application/json',
+          'Content-Type': 'application/json',
+        }
+      })
+      console.log(data)
+      // apiPendingApprovalUser(data);
+    } catch (e) {
+      console.log(e);
+      // setAlert({
+      //   open: true,
+      //   msg: e,
+      //   type: "error",
+      };
+    document.getElementById("name").value = "";
+    document.getElementById("account").value = "";
+    document.getElementById("password").value = "";
+  }
   return (
     <CoverLayout image={bgImage}>
       <Card>
@@ -57,16 +93,16 @@ function Cover() {
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
-              <MDInput type="text" label="姓名" variant="standard" fullWidth />
+              <MDInput type="text" label="姓名" variant="standard" id="name" fullWidth />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="email" label="員工ID" variant="standard" fullWidth />
+              <MDInput type="account" label="員工ID" variant="standard" id="account" fullWidth />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label="密碼" variant="standard" fullWidth />
+              <MDInput type="password" label="密碼" variant="standard" id="password" fullWidth />
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="info" fullWidth>
+              <MDButton variant="gradient" color="info" onClick={handleOnClick} fullWidth>
                 提出申請
               </MDButton>
             </MDBox>
@@ -91,5 +127,3 @@ function Cover() {
     </CoverLayout>
   );
 }
-
-export default Cover;
