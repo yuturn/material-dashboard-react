@@ -13,241 +13,266 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState, useEffect, useMemo } from "react";
+// import { useState } from "react";
 
 // react-router components
-// import { BrowserRouter as Router } from "react-router-dom";
-import { Routes, Route, Navigate, useLocation, Router } from "react-router-dom";
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 
 // @mui material components
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Icon from "@mui/material/Icon";
+// import { ThemeProvider } from "@mui/material/styles";
+// import CssBaseline from "@mui/material/CssBaseline";
+// import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
+// import MDBox from "components/MDBox";
 
 // Material Dashboard 2 React example components
-import Sidenav from "examples/Sidenav";
-import Configurator from "examples/Configurator";
+// import Sidenav from "examples/Sidenav";
+// import Configurator from "examples/Configurator";
 
 // Material Dashboard 2 React themes
-import theme from "assets/theme";
-import themeRTL from "assets/theme/theme-rtl";
+// import theme from "assets/theme";
+// import themeRTL from "assets/theme/theme-rtl";
 
 // Material Dashboard 2 React Dark Mode themes
-import themeDark from "assets/theme-dark";
-import themeDarkRTL from "assets/theme-dark/theme-rtl";
+// import themeDark from "assets/theme-dark";
+// import themeDarkRTL from "assets/theme-dark/theme-rtl";
 
 // RTL plugins
-import rtlPlugin from "stylis-plugin-rtl";
-import { CacheProvider } from "@emotion/react";
-import createCache from "@emotion/cache";
+// import rtlPlugin from "stylis-plugin-rtl";
+// import { CacheProvider } from "@emotion/react";
+// import createCache from "@emotion/cache";
 
 // Material Dashboard 2 React routes
-import routes from "routes";
+// import routes from "routes";
 
 // Material Dashboard 2 React contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
+// import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
 // Pages
 // import Login from './layouts/authentication/sign-in/index.js';
 
 // Images
-import brandWhite from "assets/images/logo-ct.png";
-import brandDark from "assets/images/logo-ct-dark.png";
+// import brandWhite from "assets/images/logo-ct.png";
+// import brandDark from "assets/images/logo-ct-dark.png";
 // import { from } from "stylis";
 // 更改首頁順序
-// import Login from './layouts/authentication/sign-in/index';
-// import SignUp from './layouts/authentication/sign-up/index';
-// import Dashboard from "./layouts/dashboard/index.js";
-// import Statistics from "./Statistics";
-// import QrcodeDownload from "./Qrcode";
-// import Map from "./Map";
-// import DevicesUpload from "./DevicesUpload";
-// import WorkerinfoUpload from "./WorkinfoUpload";
-// import MapUpload from "./MapUpload";
-// import WhiteList from "./WhiteList";
-// import ENRMission from "./OtherMission";
+import SignIn from "./pages/Sign-in";
+import SignUp from "./layouts/authentication/sign-up/index";
+import Dashboard from "./layouts/dashboard/index";
+import Equiments from "./layouts/equiments/index";
+import Materials from "./layouts/materials/index";
+import Backup from "./layouts/backup/index";
+import Permission from "./layouts/permission/index";
+import Projects from "./layouts/projects/index";
+import LOG from "./layouts/LOG/index";
+// import SnackbarAlert from "./pages/Snackbar";
 
 export default function App() {
+  // user auth
   // const [alert, setAlert] = useState({
-  //   'open': false,
-  //   'type': '',
-  //   'msg': '',
-  //   'duration': 3000
+  //   open: false,
+  //   type: "",
+  //   msg: "",
+  //   duration: 3000,
   // });
-  // // user auth
+  // user auth
   // const [authUser, setAuthUser] = useState({
-  //     'token': null,
-  //     'token_type': null,
-  //     'username': null,
-  //     'level': null,
-  // });
+  //     token: null,
+  //     token_type: null,
+  //     username: null,
+  //     level: null,
+  // })
 
-  const [controller, dispatch] = useMaterialUIController();
-  const {
-    miniSidenav,
-    direction,
-    layout,
-    openConfigurator,
-    sidenavColor,
-    transparentSidenav,
-    whiteSidenav,
-    darkMode,
-  } = controller;
-  const [onMouseEnter, setOnMouseEnter] = useState(false);
-  const [rtlCache, setRtlCache] = useState(null);
-  const { pathname } = useLocation();
+  // const [controller, dispatch] = useMaterialUIController();
+  // const {
+  //   miniSidenav,
+  //   direction,
+  //   layout,
+  //   openConfigurator,
+  //   sidenavColor,
+  //   transparentSidenav,
+  //   whiteSidenav,
+  //   darkMode,
+  // } = controller;
+  // const [onMouseEnter, setOnMouseEnter] = useState(false);
+  // const [rtlCache, setRtlCache] = useState(null);
+  // const { pathname } = useLocation();
 
   // Cache for the rtl
-  useMemo(() => {
-    const cacheRtl = createCache({
-      key: "rtl",
-      stylisPlugins: [rtlPlugin],
-    });
+  // useMemo(() => {
+  //   const cacheRtl = createCache({
+  //     key: "rtl",
+  //     stylisPlugins: [rtlPlugin],
+  //   });
 
-    setRtlCache(cacheRtl);
-  }, []);
+  //   setRtlCache(cacheRtl);
+  // }, []);
 
   // Open sidenav when mouse enter on mini sidenav
-  const handleOnMouseEnter = () => {
-    if (miniSidenav && !onMouseEnter) {
-      setMiniSidenav(dispatch, false);
-      setOnMouseEnter(true);
-    }
-  };
+  // const handleOnMouseEnter = () => {
+  //   if (miniSidenav && !onMouseEnter) {
+  //     setMiniSidenav(dispatch, false);
+  //     setOnMouseEnter(true);
+  //   }
+  // };
 
   // Close sidenav when mouse leave mini sidenav
-  const handleOnMouseLeave = () => {
-    if (onMouseEnter) {
-      setMiniSidenav(dispatch, true);
-      setOnMouseEnter(false);
-    }
-  };
+  // const handleOnMouseLeave = () => {
+  //   if (onMouseEnter) {
+  //     setMiniSidenav(dispatch, true);
+  //     setOnMouseEnter(false);
+  //   }
+  // };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  // const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
-  useEffect(() => {
-    document.body.setAttribute("dir", direction);
-  }, [direction]);
+  // useEffect(() => {
+  //   document.body.setAttribute("dir", direction);
+  // }, [direction]);
 
   // Setting page scroll to 0 when changing the route
-  useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-  }, [pathname]);
+  // useEffect(() => {
+  //   document.documentElement.scrollTop = 0;
+  //   document.scrollingElement.scrollTop = 0;
+  // }, [pathname]);
 
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
-      if (route.collapse) {
-        return getRoutes(route.collapse);
-      }
+  // const getRoutes = (allRoutes) =>
+  //   allRoutes.map((route) => {
+  //     if (route.collapse) {
+  //       return getRoutes(route.collapse);
+  //     }
 
-      if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
-      }
+  //     if (route.route) {
+  //       return <Route exact path={route.route} element={route.component} key={route.key} />;
+  //     }
 
-      return null;
-    });
+  //     return null;
+  //   });
 
-  const configsButton = (
-    <MDBox
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      width="3.25rem"
-      height="3.25rem"
-      bgColor="white"
-      shadow="sm"
-      borderRadius="50%"
-      position="fixed"
-      right="2rem"
-      bottom="2rem"
-      zIndex={99}
-      color="dark"
-      sx={{ cursor: "pointer" }}
-      onClick={handleConfiguratorOpen}
-    >
-      <Icon fontSize="small" color="inherit">
-        settings
-      </Icon>
-    </MDBox>
-  );
+  // const configsButton = (
+  //   <MDBox
+  //     display="flex"
+  //     justifyContent="center"
+  //     alignItems="center"
+  //     width="3.25rem"
+  //     height="3.25rem"
+  //     bgColor="white"
+  //     shadow="sm"
+  //     borderRadius="50%"
+  //     position="fixed"
+  //     right="2rem"
+  //     bottom="2rem"
+  //     zIndex={99}
+  //     color="dark"
+  //     sx={{ cursor: "pointer" }}
+  //     onClick={handleConfiguratorOpen}
+  //   >
+  //     <Icon fontSize="small" color="inherit">
+  //       settings
+  //     </Icon>
+  //   </MDBox>
+  // );
 
-  return direction === "rtl" ? (
-    <CacheProvider value={rtlCache}>
-      <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
-        <CssBaseline />
-        {layout === "dashboard" && (
-          <>
-            <Sidenav
-              color={sidenavColor}
-              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-              brandName="Foxlink"
-              routes={routes}
-              onMouseEnter={handleOnMouseEnter}
-              onMouseLeave={handleOnMouseLeave}
-            />
-            <Configurator />
-            {configsButton}
-          </>
-        )}
-        {layout === "vr" && <Configurator />}
-        <Router>
-          <Routes>
-            {getRoutes(routes)}
-            <Route path="*" element={<Navigate to="/dashboard" />} />
-          </Routes>
-        </Router>
-        {/* <Router>
-          <Routes>
-              <Route element={<Login setAlert={setAlert} setUser={setAuthUser} />} path={'/login'}></Route>
-              <Route element={<SignUp authUser={authUser} />} path={'/'}>
-                  <Route element={<Dashboard token={authUser.token} setAlert={setAlert} />} path={'/all-status'}></Route>
-                  <Route element={<WorkerinfoUpload setAlert={setAlert} token={authUser.token} />} path={'/worker-info-upload'}></Route>
-                  <Route element={<DevicesUpload token={authUser.token} />} path={'/devices-upload'}></Route>
-                  <Route element={<Statistics token={authUser.token} setAlert={setAlert} />} path={'/statistics'}></Route>
-                  <Route element={<QrcodeDownload token={authUser.token} />} path={'/qrcode-download'}></Route>
-                  <Route element={<Map setAlert={setAlert} token={authUser.token} />} path={'/map'}></Route>
-                  <Route element={<MapUpload token={authUser.token} />} path={'/map-upload'}></Route>
-                  <Route element={<WhiteList token={authUser.token} />} path={'/white-list'}></Route>
-                  <Route element={<ENRMission token={authUser.token} />} path={'/ENRMission'}></Route>
-              </Route>
-              <Route
-                  path='*'
-                  element={
-                      <Navigate to="/login" replace />
-                  }
-              />
-          </Routes>
-        </Router> */}
-      </ThemeProvider>
-    </CacheProvider>
-  ) : (
-    <ThemeProvider theme={darkMode ? themeDark : theme}>
-      <CssBaseline />
-      {layout === "dashboard" && (
-        <>
-          <Sidenav
-            color={sidenavColor}
-            brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Foxlink"
-            routes={routes}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          />
-          <Configurator />
-          {configsButton}
-        </>
-      )}
-      {layout === "vr" && <Configurator />}
+  return (
+    <BrowserRouter>
       <Routes>
-        {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route element={<SignIn />} path="/SignIn" />
+        <Route element={<SignUp />} path="/SignUp" />
+        <Route element={<Dashboard />} path="/">
+          <Route element={<Equiments />} path="/Equiments" />
+          <Route element={<Materials />} path="/Materials" />
+          <Route element={<Backup />} path="/Backup" />
+          <Route element={<Permission />} path="/Permission" />
+          <Route element={<Projects />} path="/Projects" />
+          <Route element={<LOG />} path="/LOG" />
+        </Route>
+        <Route path="*" element={<Navigate to="/SignIn" replace />} />
       </Routes>
-    </ThemeProvider>
+    </BrowserRouter>
   );
+
+  // return direction === "rtl" ? (
+  //   <CacheProvider value={rtlCache}>
+  //     <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
+  //       {/* <CssBaseline />
+  //       {layout === "SignIn" && (
+  //         <>
+  //           <Sidenav
+  //             color={sidenavColor}
+  //             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+  //             brandName="Foxlink"
+  //             routes={routes}
+  //             onMouseEnter={handleOnMouseEnter}
+  //             onMouseLeave={handleOnMouseLeave}
+  //           />
+  //           <Configurator />
+  //           {configsButton}
+  //         </>
+  //       )}
+  //       {layout === "vr" && <Configurator />} */}
+  //       {/* <Router>
+  //         <Routes>
+  //           {getRoutes(routes)}
+  //           <Route path="*" element={<Navigate to="/sign-in" />} />
+  //         </Routes>
+  //       </Router> */}
+  //       <BrowserRouter>
+  //         <Routes>
+  //           <Route element={<SignIn />} path="/SignIn" />
+  //           <Route element={<SignUp />} path="/SignUp" />
+  //           <Route element={<Dashboard />} path="/Dashboard">
+  //             <Route element={<Equiments />} path="/Equiments" />
+  //             <Route element={<Materials />} path="/Materials" />
+  //             <Route element={<Backup />} path="/Backup" />
+  //             <Route element={<Permission />} path="/Permission" />
+  //             <Route element={<Projects />} path="/Projects" />
+  //             <Route element={<LOG />} path="/LOG" />
+  //           </Route>
+  //           <Route path="*" element={<Navigate to="/login" replace />} />
+  //         </Routes>
+  //       </BrowserRouter>
+  //     </ThemeProvider>
+  //   </CacheProvider>
+  // ) : (
+  //   <ThemeProvider theme={darkMode ? themeDark : theme}>
+  //     <CssBaseline />
+  //     {layout === "SignIn" && (
+  //       <>
+  //         <Sidenav
+  //           color={sidenavColor}
+  //           brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+  //           brandName="Foxlink"
+  //           routes={routes}
+  //           onMouseEnter={handleOnMouseEnter}
+  //           onMouseLeave={handleOnMouseLeave}
+  //         />
+  //         <Configurator />
+  //         {configsButton}
+  //       </>
+  //     )}
+  //     {layout === "vr" && <Configurator />}
+  //     {/* <Routes>
+  //       {getRoutes(routes)}
+  //       <Route path="*" element={<Navigate to="/sign-in" />} />
+  //     </Routes> */}
+  //     <BrowserRouter>
+  //       <Routes>
+  //         <Route element={<SignIn />} path="/SignIn" />
+  //         <Route element={<SignUp />} path="/SignUp" />
+  //         <Route element={<Dashboard />} path="/Dashboard">
+  //           <Route element={<Equiments />} path="/Equiments" />
+  //           <Route element={<Materials />} path="/Materials" />
+  //           <Route element={<Backup />} path="/Backup" />
+  //           <Route element={<Permission />} path="/Permission" />
+  //           <Route element={<Projects />} path="/Projects" />
+  //           <Route element={<LOG />} path="/LOG" />
+  //         </Route>
+  //         <Route path="*" element={<Navigate to="/login" replace />} />
+  //       </Routes>
+  //     </BrowserRouter>
+  //   </ThemeProvider>
+  // );
 }
