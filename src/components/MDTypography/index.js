@@ -95,4 +95,5 @@ MDTypography.propTypes = {
   opacity: PropTypes.number,
 };
 
+MDTypography.displayName = "MDTypography";
 export default MDTypography;

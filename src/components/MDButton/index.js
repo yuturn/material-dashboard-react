@@ -99,4 +99,5 @@ MDButton.propTypes = {
   alignItems: PropTypes.oneOf(["center", "left", "right"]),
 };
 
+MDButton.displayName = "MDButton";
 export default MDButton;

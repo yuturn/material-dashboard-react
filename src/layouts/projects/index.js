@@ -35,7 +35,6 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 // import Footer from "examples/Footer";
 
 // import authorsTableData from "layouts/projects/data/authorsTableData";
-// import DataTable from "examples/Tables/DataTable";
 // import Dialog from "@mui/material/Dialog";
 // import DialogActions from "@mui/material/DialogActions";
 // import DialogContent from "@mui/material/DialogContent";
@@ -317,15 +316,6 @@ function Notifications() {
                           <MDTypography variant="h5" color="white">
                             專案
                           </MDTypography>
-                        </MDBox>
-                        <MDBox pt={3}>
-                          <DataTable
-                            table={{ columns, rows }}
-                            isSorted={false}
-                            entriesPerPage={false}
-                            showTotalEntries={false}
-                            noEndBorder
-                          />
                         </MDBox>
                       </Card>
                     </Grid>

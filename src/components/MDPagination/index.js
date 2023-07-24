@@ -92,4 +92,5 @@ MDPagination.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+MDPagination.displayName = "MDPagination";
 export default MDPagination;

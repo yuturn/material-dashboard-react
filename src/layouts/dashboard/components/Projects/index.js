@@ -26,7 +26,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React examples
-// import DataTable from "examples/Tables/DataTable";
+
 
 // Data
 // import data from "layouts/dashboard/components/Projects/data";
@@ -88,15 +88,6 @@ function Projects() {
         </MDBox> */}
         {renderMenu}
       </MDBox>
-      {/* <MDBox>
-        <DataTable
-          table={{ columns, rows }}
-          showTotalEntries={false}
-          isSorted={false}
-          noEndBorder
-          entriesPerPage={false}
-        />
-      </MDBox> */}
     </Card>
   );
 }
