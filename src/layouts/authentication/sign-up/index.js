@@ -48,7 +48,7 @@ export default function SignUp() {
         "password": passwd
       };
       const data = JSON.stringify(temp_data)
-      fetch('http://192.168.0.115/users/pending-approval-user', {
+      fetch('http://139.59.230.156/users/pending-approval-user', {
         method: 'POST',
         body: data,
         headers: {

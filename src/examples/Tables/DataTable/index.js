@@ -189,7 +189,7 @@ function DataTable({
             <TableRow {...headerGroup.getHeaderGroupProps()} key={true}>
               {headerGroup.headers.map((column) => (
                 <DataTableHeadCell
-                  key={column.id}
+                  key={cell.column.id}
                   {...column.getHeaderProps(isSorted && column.getSortByToggleProps())}
                   width={column.width ? column.width : "auto"}
                   align={column.align ? column.align : "left"}
